@@ -1,10 +1,5 @@
 package main
 
-import (
-	"$HOME/tile"
-	"fmt"
-)
-
 //############################################################
 //Name: Main
 //Date: Who knows
@@ -15,13 +10,11 @@ import (
 //############################################################
 func main() {
 	//Create the maze struct
-
-	fmt.Println(tile.SayHello())
-
-	/*maze := Maze{
-		size:             Size{width: 10, height: 10},
-		minNumberOfTurns: 4,
+	maze := Maze{
+		Size:             Size{Width: 16, Height: 16},
+		MinNumberOfTurns: 10,
+		MaxLength:        4,
 	}
-	maze.create("Test")
-	*/
+	//maze.Create("Test", time.Now().UnixNano())
+	maze.Create("test", 1660019299025486300)
 }
