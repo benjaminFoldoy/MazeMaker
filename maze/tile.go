@@ -1,4 +1,4 @@
-package main
+package maze
 
 //############################################################
 //Name: Tile
@@ -13,7 +13,8 @@ package main
 //The tile will have walls on the top and bottom, and will have no walls on the right and left
 //############################################################
 type Tile struct {
-	left, right, top, bottom bool
+	Left, Right, Top, Bottom bool
+	IsInspected              bool
 }
 
 //############################################################
@@ -30,19 +31,19 @@ func (tile Tile) TilePrint() {
 
 	//Set sides of box to either dotted or solid
 	for i := 0; i < 9; i++ {
-		if tile.top || i%2 == 0 {
+		if tile.Top || i%2 == 0 {
 			array[0][i] = true
 		}
 
-		if tile.bottom || i%2 == 0 {
+		if tile.Bottom || i%2 == 0 {
 			array[8][i] = true
 		}
 
-		if tile.left || i%2 == 0 {
+		if tile.Left || i%2 == 0 {
 			array[i][0] = true
 		}
 
-		if tile.right || i%2 == 0 {
+		if tile.Right || i%2 == 0 {
 			array[i][8] = true
 		}
 	}
@@ -59,8 +60,4 @@ func (tile Tile) TilePrint() {
 		}
 		println()
 	}
-}
-
-func SayHello() string {
-    return "Hello, world!"
 }
