@@ -80,13 +80,16 @@ func (maze *Maze) OutOfBoundsOrInspected(Crd Position) bool {
 // and creating the .png file with the visualized maze.
 // Usage				:
 // ############################################################
-func (maze *Maze) Create(fileName string, seed int64) {
+func (maze *Maze) Create(fileName string, seed int64) bool {
 	rand.Seed(seed)
 	//println("seed : ", seed)
 
 	maze.TileMatrix = maze.CreateBlankMatrix()
 	startPos := maze.SetStartPosition()
 	maze.Start = startPos
+	if maze.OutOfBoundsOrInspected(startPos) {
+		return false
+	}
 	maze.TileMatrix[startPos.X][startPos.Y].IsInspected = true
 
 	//println("start : ", startPos.X, startPos.Y)
@@ -107,6 +110,7 @@ func (maze *Maze) Create(fileName string, seed int64) {
 		//if there is no possible directions, it should revert
 		if len(possibleDirections) == 0 {
 			shouldRevert = true
+			return false
 		}
 
 		//if all possible directions are enclosed, it should revert
@@ -118,6 +122,7 @@ func (maze *Maze) Create(fileName string, seed int64) {
 		}
 		if onlyEnclosedDirections {
 			shouldRevert = true
+			return false
 		}
 
 		//the actual revertion
@@ -166,6 +171,7 @@ func (maze *Maze) Create(fileName string, seed int64) {
 	maze.PrettyUpStartAndEnd()
 	maze.CreatePng(fileName)
 	//maze.PrintInspectedTiles()
+	return true
 }
 
 // ############################################################
