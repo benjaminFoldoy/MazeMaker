@@ -10,9 +10,13 @@ Command: go run main.go 10 10 small_maze <br>
 Output image: <br>
 ![small_maze](output_images/10x10.png)
 
-Command: go run main.go 20 60 rectangle_maze <br>
+Command: go run main.go 10 20 small_rectangle_maze <br>
 Output image: <br>
-![rectangle_maze](output_images/20x60.png)
+![rectangle_maze](output_images/10x20.png)
+
+Command: go run main.go 20 30 medium_rectangle_maze <br>
+Output image: <br>
+![rectangle_maze](output_images/20x30.png)
 
 Command: go run main.go 70 70 large_maze <br>
 Output image: <br>
