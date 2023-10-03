@@ -7,27 +7,32 @@
 
 ## Examples
 ### 10 x 10 Maze
-Command: go run main.go 10 10 small_maze <br>
+Command: <br>
+`go run main.go 10 10 small_maze` <br>
 Output image: <br>
 ![small_maze](output_images/10x10.png)
 
 ### 20 x 20 Maze
-Command: go run main.go 10 20 small_rectangle_maze <br>
+Command: <br>
+`go run main.go 10 20 small_rectangle_maze` <br>
 Output image: <br>
 ![rectangle_maze](output_images/10x20.png)
 
 ### 30 x 20 Maze
-Command: go run main.go 20 30 medium_rectangle_maze <br>
+Command: <br>
+`go run main.go 20 30 medium_rectangle_maze` <br>
 Output image: <br>
 ![rectangle_maze](output_images/20x30.png)
 
 ### 70 x 70 Maze
-Command: go run main.go 70 70 large_maze <br>
+Command: <br>
+`go run main.go 70 70 large_maze` <br>
 Output image: <br>
 ![large_maze](output_images/70x70.png)
 
 ### 100 x 100 Maze
-Command: go run main.go 100 100 huge_maze <br>
+Command: <br>
+`go run main.go 100 100 huge_maze` <br>
 Output image: <br>
 ![huge_maze](output_images/100x100.png)
 
